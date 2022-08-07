@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    //转化目标代码，ES5
+    "target": "esnext",
+    //使用的模块化  umd多种模块化都支持
+    "module": "esnext",
+    //严格检查
+    "strict": true,
+    //对jsx代码做处理 preserve不处理
+    "jsx": "preserve",
+    //辅助的导入功能
+    "importHelpers": true,
+    //按照node的方式解析模块
+    "moduleResolution": "node",
+    //跳过对一些库的类型检测
+    "skipLibCheck": true,
+    //esmoudle和commonjs是否可以混合使用
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    //要不要生成映射文件 ts-js
+    "sourceMap": true,
+    //文件url在解析时，基本url
+    "baseUrl": ".",
+    //指定具体解析的类型
+    "types": ["webpack-env"],
+    //编译阶段的路径解析（类似于webpack的alias）
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    //指定在项目中可以使用哪些库的类型
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  },
+  //哪些代码需要用ts解析
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  //排除
+  "exclude": ["node_modules"]
+}
